@@ -51,7 +51,7 @@ class homeTasksView{
                             </div>
                         </div>
                     </div>
-                    `)
+                    `).join('')
                 }
             </section>
 

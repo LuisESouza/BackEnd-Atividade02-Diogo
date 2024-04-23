@@ -9,10 +9,14 @@ class categoryView {
             return `
             <div class="chooseCategory">
                 <div>
+                    <div class = "close-container">
+                        <button id = "btn-close"><i class = "bi bi-x"></i></button>
+                    </div>
+
                     <div class="chooseCategory-tittle">
                         <h4>Choose Category</h4>
-                    </div>
-        
+                    </div>                  
+
                     <span class="line"></span>
         
                     <section class="chooseCategory-container">

@@ -32,5 +32,10 @@ class categoryController {
                 button.classList.add('active');
             });
         });
+
+        const btnClose = document.querySelector("#btn-close");
+        btnClose.addEventListener("click", ()=>{
+            new Router().goTo("addTask");
+        })
     }
 }
