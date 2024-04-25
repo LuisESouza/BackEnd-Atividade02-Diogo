@@ -16,7 +16,7 @@ class addFlagController {
 
         const btnSave = document.querySelector("#btn-save");
         btnSave.addEventListener("click", () => {
-            const flagValue = document.querySelector(".table-task button.active").value;
+            const flagValue = document.querySelector(".table-task button.active").value;           
             new Router().goTo("addTask", flagValue);
         });
 

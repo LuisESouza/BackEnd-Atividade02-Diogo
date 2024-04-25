@@ -20,7 +20,8 @@ class categoryController {
         const btnAddCategory = document.querySelector("#btn-addCategory");
             btnAddCategory.addEventListener("click", ()=>{
             const category = document.querySelector(".Category button.active").value;
-            new Router().goTo("addTask", category);
+            console.log(category);
+            new Router().goTo("addTask");
         });
 
 

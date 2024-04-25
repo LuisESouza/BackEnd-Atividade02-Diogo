@@ -11,6 +11,6 @@ class Router{
 
     goTo(rota, param) {
         history.pushState({}, "", rota);
-        eval(`new ${this.rotas[rota]}('${param}')`);
+        eval(`new ${this.rotas[rota]}(${param})`);
     }
 }

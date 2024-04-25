@@ -22,7 +22,7 @@ class categoryView {
                     <section class="chooseCategory-container">
                         ${categories.map(category => `
                             <div class="Category">
-                                <button id = "btn-category" class = "" style="background-color: ${category.color};" value = "${category._id}">
+                                <button id = "btn-category" class = "" style="background-color: ${category.color};" value = "${category.categoryTask, category.color}">
                                     <i class="" style="color: white;"></i>
                                 </button>   
                                 <div class="text-category">

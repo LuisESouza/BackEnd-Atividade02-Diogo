@@ -249,6 +249,11 @@ form{
     width: 64px;
     height: 90px;
 }
+#btn-category{
+    height: 100%;
+    border: none;
+    border-radius: 6px;
+}
 .text-category{
     text-wrap: nowrap;
     font-size: small;

@@ -9,7 +9,7 @@ const schemaTask = new Schema({
     nome: String,
     description: String,
     taskPriority: Number,
-    categoryTask: { type: Schema.Types.ObjectId, ref: 'Category' },
+    categoryTask: [schemaCategory],
     taskReady: Boolean,
 });
 
