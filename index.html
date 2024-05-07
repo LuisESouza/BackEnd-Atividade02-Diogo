@@ -83,10 +83,10 @@
         const btnPlus = document.querySelector("#btn-plus");
         btnPlus.addEventListener("click", () => {
             if (isTaskMenuOpen) {
-                new Router().goTo("home");
+                new Router().goHome();
                 isTaskMenuOpen = false;
             } else {
-                new Router().goTo("addTask");
+                new Router().goAddTask();
                 isTaskMenuOpen = true;
             }
         }); 

@@ -1,11 +1,10 @@
 class categoryView {
-    constructor() {}
+    constructor(categories) {
+        this.categories = categories;
+    }
 
     async render() {
-        const Category = new categoryModel();
-        try {
-            const categories = await Category.getCategory();
-
+            
             return `
             <div class="chooseCategory">
                 <div>
@@ -20,17 +19,18 @@ class categoryView {
                     <span class="line"></span>
         
                     <section class="chooseCategory-container">
-                        ${categories.map(category => `
+                        ${
+                            this.categories.map(category => `
                             <div class="Category">
-                                <button id = "btn-category" class = "" style="background-color: ${category.color};" value = "${category.categoryTask, category.color}">
+                                <button id="btn-category" class="" style="background-color: ${category.color};" value="${category.categoryTask},${category.color}">
                                     <i class="" style="color: white;"></i>
                                 </button>   
                                 <div class="text-category">
                                     <p>${category.categoryTask}</p>
                                 </div>
                             </div>
-                        `).join('')}
-
+                        `).join('')
+                        }
                         <div class="Category">
                             <button id="btn-createCategory" class="btn-createCategory" style="cursor:pointer; background-color: #80FFD1; padding: 20px; border-radius: 10px; border: none;">
                                 <i class="bi bi-plus-lg" style="color: #00A369;"></i>
@@ -46,9 +46,5 @@ class categoryView {
                     <button id="btn-addCategory">Add Category</button>
                 </div>
             </div>`;
-        } catch (error) {
-            console.error("Error fetching categories:", error);
-            return "";
-        }
     }
 }

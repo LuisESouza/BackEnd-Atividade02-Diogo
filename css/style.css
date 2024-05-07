@@ -7,7 +7,7 @@ body {
     background-color: #121212;
     font-family: Arial, sans-serif;
 }
-/* HEADCategory.getCategory();ER */
+/* HEADER */
 .navigator-top {
     display: flex;
     justify-content: space-between;
@@ -253,6 +253,10 @@ form{
     height: 100%;
     border: none;
     border-radius: 6px;
+}
+#btn-category:focus{
+    border: 2px solid white;
+    transform: scale(1.2);
 }
 .text-category{
     text-wrap: nowrap;

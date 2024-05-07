@@ -1,5 +1,5 @@
 class Router{
-    constructor(){
+   constructor(){
         this.rotas = {
             'home': "homeController",
             'addTask': "addTaskController",
@@ -9,8 +9,28 @@ class Router{
         }
     }
 
+    goHome(){
+        this.goTo("home");
+    }
+
+    goAddTask(param){
+        this.goTo("addTask", param);
+    }
+
+    goAddFlag(){
+        this.goTo("addFlag");
+    }
+
+    goAddCategory(){
+        this.goTo("addCategory");
+    }
+
+    goCreateCategory(){
+        this.goTo("createCategory");
+    }
+
     goTo(rota, param) {
         history.pushState({}, "", rota);
-        eval(`new ${this.rotas[rota]}(${param})`);
+        eval(`new ${this.rotas[rota]}("${param}")`);
     }
 }

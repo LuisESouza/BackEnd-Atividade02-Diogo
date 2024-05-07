@@ -1,13 +1,10 @@
 class homeTasksView{
-    constructor(){}
+    constructor(tasks){
+        this.tasks = tasks
+    }
 
     async render(){
-        const tasks = new taskModel();
-        try{
-
-            const task = await tasks.getTask();
-
-            return `
+        return `
         <div class="homeTasks">
             <div class="search-container">
                 <label for="search-toggle">
@@ -24,7 +21,7 @@ class homeTasksView{
                 </div>
 
                 ${
-                    task.map(task => `
+                    this.tasks.map(task => `
                     <div class="task">
                         <div class="radio-container">
                                 <input type="radio" name="radio" value="">
@@ -80,9 +77,6 @@ class homeTasksView{
                 </div>
             </section>
         </div>
-        `
-        }catch(error){
-            console.log(error)
-        }        
+        `     
     }
 }

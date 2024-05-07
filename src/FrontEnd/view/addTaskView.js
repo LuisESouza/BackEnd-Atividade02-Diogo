@@ -14,22 +14,22 @@ class addTaskView{
                 </div>
                 <div class="form-buttons">
                     <div>
-                        <button class = "" id = "btn-stopwatch">
+                        <button class="" id="btn-stopwatch">
                             <i class="bi bi-clock"></i>
                         </button>
                         
-                        <button class = "" id = "btn-tag">
+                        <button class="" id="btn-tag">
                             <i class="bi bi-tag"></i>
                         </button>
 
-                        <button class = "" id = "btn-flag">
+                        <button class="" id ="btn-flag">
                             <i class="bi bi-flag"></i>
                         </button>
 
                     </div>
 
                     <div class="form-submit">
-                        <button class = "" id = "btn-submit">
+                        <button class="" id="btn-submit">
                             <i class="bi bi-send"></i>
                         </button>
                     </div>

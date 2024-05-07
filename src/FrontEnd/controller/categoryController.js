@@ -3,27 +3,31 @@ class categoryController {
         this.content = document.querySelector("#content");
         this.header = document.querySelector("header");
         this.footer = document.querySelector("footer");
-        this.init();
+        this.bind();
     }
 
-    async init() {
-        const View = new categoryView();
+    async bind() {
+        const categorymodel = new categoryModel();
+        const categories = await categorymodel.getCategory();
+
+        const View = new categoryView(categories);
+
         this.content.innerHTML = await View.render();
 
         const btnCreate = document.querySelector("#btn-createCategory");
         btnCreate.addEventListener("click", ()=>{
              this.footer.style.display = "none";
              this.header.style.display = "none";
-             new Router().goTo("createCategory");
+             new Router().goCreateCategory();
         })
 
         const btnAddCategory = document.querySelector("#btn-addCategory");
             btnAddCategory.addEventListener("click", ()=>{
             const category = document.querySelector(".Category button.active").value;
-            console.log(category);
-            new Router().goTo("addTask");
-        });
 
+            //Passando as informacoes da category para o addTask
+            new Router().goAddTask({flagValue: flagValue, category: category});
+        });
 
 
         const categoryButtons = document.querySelectorAll(".Category button");
@@ -36,7 +40,7 @@ class categoryController {
 
         const btnClose = document.querySelector("#btn-close");
         btnClose.addEventListener("click", ()=>{
-            new Router().goTo("addTask");
+            new Router().goAddTask();
         })
     }
 }

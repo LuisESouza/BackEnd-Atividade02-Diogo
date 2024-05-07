@@ -8,6 +8,7 @@ class createCategoryController {
 
     init() {
         const View = new createCategoryView();
+
         this.content.innerHTML = View.render();
 
         const form = document.querySelector("form");
@@ -19,28 +20,25 @@ class createCategoryController {
         btnCancel.addEventListener("click", () => {
             this.footer.style.display = "block";
             this.header.style.display = "block";
-            new Router().goTo("addCategory");
+            new Router().goAddCategory();
         })
 
         const btnCreate = document.querySelector("#btn-create");
         btnCreate.addEventListener("click", async () => {
             const inputValue = document.querySelector("input").value;
-            if(inputValue==""){
-                alert("informe um nome para a categoria");
-            }else{
             const selectedColor = document.querySelector(".container-colors button.active").value;
 
+            if(inputValue=="" && selectedColor == null){
+                alert("informe um nome para a categoria");
+            }else{
             try {
-                const response = await fetch("http://localhost:3001/category", {
-                    method: "POST",
-                    body: JSON.stringify({
-                        categoryTask: inputValue,
-                        color: selectedColor
-                    }),
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
-                });
+                
+                const data = {
+                    categoryTask: inputValue,
+                    color: selectedColor
+                }
+
+                const response = await categorymodel.createCategory(data);
                 if (response.ok) {
                     new Router().goTo("addCategory");
                     this.footer.style.display = "block";
